@@ -27,8 +27,15 @@ mongoose.connect(
   }
 );
 
+/**
+ * @dev Routers
+ */
+const OurWorksRouter = require("./Routes/OurWorks.routes");
+const JobsRouter = require("./Routes/Jobs.routes");
+
 app
-  //   .use("/api/v1/early-access", require("./routes/early-accessors.routes"))
+  .use("/api/v1", OurWorksRouter)
+  .use("/api/v1", JobsRouter)
   /**
    * @dev 404 API request
    */
